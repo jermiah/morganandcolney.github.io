@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Leadership Team</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #e0f7fa, #ffffff);
+            color: #333;
+        }
+
+        header {
+            background-color: #01579b;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .tab-button {
+            background: #0288d1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .tab-button:hover {
+            background: #01579b;
+            transform: scale(1.1);
+        }
+
+        .tab-button.active {
+            background: #ff6f00;
+            color: white;
+            font-weight: bold;
+            border: 2px solid #ff8f00;
+        }
+
+        .team-section {
+            display: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .team-section.active {
+            display: block;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .team-card img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 20px auto 10px;
+            display: block;
+            border: 5px solid #0288d1;
+        }
+
+        .team-card-content {
+            padding: 20px;
+        }
+
+        .team-card h3 {
+            font-size: 1.8rem;
+            color: #01579b;
+            margin: 0 0 10px;
+        }
+
+        .team-card h4 {
+            font-size: 1.2rem;
+            color: #0288d1;
+            margin: 0 0 15px;
+        }
+
+        .team-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        footer {
+            background-color: #01579b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            font-size: 1rem;
+        }
+    </style>
+    <script>
+        function showTab(team) {
+            document.querySelectorAll('.team-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            document.getElementById(team).classList.add('active');
+            document.querySelector(`[onclick="showTab('${team}')"]`).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Our Leadership Team</h1>
+    <p>Meet the visionaries behind our success</p>
+</header>
+
+<div class="tabs">
+    <button class="tab-button active" onclick="showTab('indian-team')">Indian Leadership Team</button>
+    <button class="tab-button" onclick="showTab('french-team')">French Leadership Team</button>
+</div>
+
+<section id="indian-team" class="team-section active">
+    <div class="team-grid">
+        <div class="team-card">
+            <img src="anuraj.jpg" alt="Anuraj Ratna">
+            <div class="team-card-content">
+                <h3>Anuraj Ratna</h3>
+                <h4>Business Support Services</h4>
+                <p>Anuraj is an Indian sourcing and expansion expert with over 30 years of experience, working with international companies like Auchan, Decathlon, Gap, and Banana Republic. He speaks English and Hindi.</p>
+            </div>
+        </div>
+        <div class="team-card">
+            <img src="rajesh.jpg" alt="Rajesh Gupta">
+            <div class="team-card-content">
+                <h3>Rajesh Gupta</h3>
+                <h4>Legal Services</h4>
+                <p>Rajesh is a seasoned corporate and licensed litigation lawyer with over 23 years of experience in domestic and international issues. He speaks English and Hindi.</p>
+            </div>
+        </div>
+        <div class="team-card">
+            <img src="ishita.jpg" alt="Ishita Verma">
+            <div class="team-card-content">
+                <h3>Ishita Verma</h3>
+                <h4>HR & Admin Services</h4>
+                <p>Ishita has over 10 years of experience managing HR and administration, including setting up foreign companies in India. She speaks English, Chinese, and Hindi.</p>
+            </div>
+        </div>
+        <div class="team-card">
+            <img src="vanal.jpg" alt="Vanalnghaka">
+            <div class="team-card-content">
+                <h3>Vanalnghaka</h3>
+                <h4>IT & Digital Marketing Services</h4>
+                <p>Vanal has 21 years of experience in software development and digital marketing. He speaks English, Mizo, and Hindi.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="french-team" class="team-section">
+    <div class="team-grid">
+        <div class="team-card">
+            <img src="boris.jpg" alt="Boris Denoual">
+            <div class="team-card-content">
+                <h3>Boris Denoual</h3>
+                <h4>Managing Partner</h4>
+                <p>Boris is an expert consultant with over 25 years of experience helping European companies expand in APAC. He speaks French and English.</p>
+            </div>
+        </div>
+        <div class="team-card">
+            <img src="helen.jpg" alt="Helen Pari">
+            <div class="team-card-content">
+                <h3>Helen Pari</h3>
+                <h4>Partner</h4>
+                <p>Helen is a corporate lawyer with a Master's degree in International Finance and 15 years of experience in sectors like automotive, banking, FMCG, and AI. She speaks English, French, Mizo, and Hindi.</p>
+            </div>
+        </div>
+        <div class="team-card">
+            <img src="hugo.jpg" alt="Hugo Cassici">
+            <div class="team-card-content">
+                <h3>Hugo Cassici</h3>
+                <h4>Partner</h4>
+                <p>Hugo has a degree in medicine and over 10 years of experience in healthcare, blockchain, fintech, and AI. He speaks French, English, and Spanish.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Our Company | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
